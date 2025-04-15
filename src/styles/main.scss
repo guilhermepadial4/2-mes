@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+$primary-color: #4a90e2;
+$secondary-color: #67d4f8;
+$accent-color: #6c63ff;
+$background-color: #f0f8ff;
+$text-color: #2d3748;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  overflow-x: hidden;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4a90e2 0%, #67d4f8 100%);
+  padding: 1rem;
+
+  .login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2rem, 6vw, 3rem);
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-group {
+      margin-bottom: 1.2rem;
+
+      input {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid rgba(74, 144, 226, 0.3);
+        border-radius: 12px;
+        font-size: 1rem;
+        background: rgba(255, 255, 255, 0.9);
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+          box-shadow: 0 0 12px rgba(74, 144, 226, 0.2);
+        }
+      }
+    }
+
+    button {
+      background: linear-gradient(45deg, $primary-color, $secondary-color);
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+      }
+    }
+  }
+}
+
+.home-container {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      background: linear-gradient(45deg, $primary-color, $accent-color);
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: clamp(1rem, 4vw, 1.5rem);
+      color: $text-color;
+      font-weight: 300;
+    }
+  }
+
+  .countdown-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    text-align: center;
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+
+      .countdown-item {
+        background: linear-gradient(135deg, $primary-color, $secondary-color);
+        padding: 1.2rem;
+        border-radius: 15px;
+        color: white;
+
+        .number {
+          font-size: clamp(1.5rem, 6vw, 2.5rem);
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+
+        .label {
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  .love-letter {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, $primary-color, $secondary-color);
+    }
+
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: clamp(1rem, 4vw, 1.1rem);
+      line-height: 1.8;
+      color: $text-color;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 5vw, 1.8rem);
+      color: $accent-color;
+      text-align: right;
+      margin-top: 2rem;
+    }
+  }
+
+  .floating-hearts {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+}
+
+.music-player {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  z-index: 10;
+  width: calc(100% - 2rem);
+  max-width: 400px;
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: $primary-color;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $accent-color;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .song-info {
+    flex: 1 1 100%;
+    text-align: center;
+
+    .song-title {
+      font-weight: 600;
+      color: $primary-color;
+    }
+
+    .artist {
+      font-size: 0.9rem;
+      color: $text-color;
+    }
+  }
+}
+
+.logout-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 10;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+  }
+}
