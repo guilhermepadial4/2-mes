@@ -128,7 +128,7 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <h2>Meu Amor,</h2>
+        <h2>Meu Bem,</h2>
         <p>
           Tudo começou de um jeito inesperado. Daqueles que a gente só entende depois, quando olha pra trás. Eu vi você a primeira vez de
           relance na academia, lá em 2023. Só uma vez. Mas bastou.
